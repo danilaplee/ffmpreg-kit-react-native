@@ -6,17 +6,8 @@ if(NOT CMAKE_BUILD_TYPE)
         FORCE)
 endif()
 message(STATUS "cmake version ${CMAKE_VERSION}")
-if(POLICY CMP0025)
-    cmake_policy(SET CMP0025 OLD) # report Apple's Clang as just Clang
-endif()
-if(POLICY CMP0042)
-    cmake_policy(SET CMP0042 NEW) # MACOSX_RPATH
-endif()
-if(POLICY CMP0054)
-    cmake_policy(SET CMP0054 OLD) # Only interpret if() arguments as variables or keywords when unquoted
-endif()
-
 project (x265)
+cmake_minimum_required(VERSION 4.0)
 include(CheckIncludeFiles)
 include(CheckFunctionExists)
 include(CheckSymbolExists)
